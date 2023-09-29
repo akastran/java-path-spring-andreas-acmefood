@@ -16,15 +16,18 @@ import java.util.Set;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
+@Table(indexes = {@Index(columnList = "storeId"), @Index(columnList = "accountId")})
 @SequenceGenerator(name = "idGenerator", sequenceName = "ORDERS_SEQ", initialValue = 1, allocationSize = 1)
 public class Order extends BaseModel{
 
     @ToString.Exclude
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    @MapsId("accountId")
     private Account account;
 
     @ToString.Exclude
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    @MapsId("storeId")
     private Store store;
 
     @Temporal(TemporalType.TIMESTAMP)

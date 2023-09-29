@@ -13,6 +13,7 @@ import lombok.*;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
+@Table(indexes = {@Index(columnList = "storeId"), @Index(columnList = "accountId")})
 @SequenceGenerator(name = "idGenerator", sequenceName = "ADDRESSES_SEQ", initialValue = 1, allocationSize = 1)
 public class Address extends BaseModel{
 
@@ -39,4 +40,10 @@ public class Address extends BaseModel{
     @OneToOne(fetch = FetchType.LAZY, optional = false)
     @MapsId("storeId")
     private Store store;
+
+    @ToString.Exclude
+    @NotNull
+    @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    @MapsId("accountId")
+    private Account account;
 }

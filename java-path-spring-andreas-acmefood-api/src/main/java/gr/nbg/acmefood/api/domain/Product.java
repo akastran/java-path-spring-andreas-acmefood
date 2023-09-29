@@ -18,7 +18,7 @@ public class Product extends BaseModel{
 
     @NotNull
     @Column(length = 50, nullable = false)
-    private String name;
+    private String description;
 
     @NotNull
     private ProductCategory category;
@@ -32,10 +32,4 @@ public class Product extends BaseModel{
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @MapsId("storeId")
     private Store store;
-
-    @ToString.Exclude
-    @NotNull
-    @ManyToOne(fetch = FetchType.LAZY, optional = false)
-    @MapsId("accountId")
-    private Account account;
 }

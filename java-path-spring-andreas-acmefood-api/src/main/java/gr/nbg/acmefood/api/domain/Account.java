@@ -14,8 +14,13 @@ import java.util.Set;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
+@Table(indexes = {@Index(columnList = "userId")})
 @SequenceGenerator(name = "idGenerator", sequenceName = "ACCOUNTS_SEQ", initialValue = 1, allocationSize = 1)
 public class Account extends BaseModel{
+
+    @NotNull
+    @Column(length = 20, nullable = false, unique = true)
+    private String userId;
 
     @NotNull(message = "{firstname.null}")
     @Column(length = 20, nullable = false)
