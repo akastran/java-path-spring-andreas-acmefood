@@ -89,12 +89,15 @@ public class SampleContentCreator extends BaseComponent implements CommandLineRu
         List<Store> stores = storeService.createAll(
                 Store.builder()
                         .category(StoreCategory.Grill)
+                        .name("Ο Πρόεδρος")
                         .build(),
                 Store.builder()
                         .category(StoreCategory.Asian)
+                        .name("China Wok")
                         .build(),
                 Store.builder()
                         .category(StoreCategory.Breakfast)
+                        .name("Everest")
                         .build());
 
         logger.info("Stores created: {}.", stores);

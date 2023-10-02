@@ -1,6 +1,7 @@
 package gr.nbg.acmefood.api.controller;
 
 import gr.nbg.acmefood.api.domain.Store;
+import gr.nbg.acmefood.api.domain.StoreCategory;
 import gr.nbg.acmefood.api.mapper.BaseMapper;
 import gr.nbg.acmefood.api.mapper.StoreMapper;
 import gr.nbg.acmefood.api.service.BaseService;
@@ -12,6 +13,8 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 @RequiredArgsConstructor
@@ -31,9 +34,18 @@ public class StoreController extends BaseController<Store, StoreResource> {
         return storeMapper;
     }
 
-    @GetMapping(params = "serial")
+    @GetMapping(params = "id")
     public ResponseEntity<ApiResponse<StoreResource>> findById(@RequestParam Long id) {
         final StoreResource storeResource = getMapper().toResource(storeService.get(id));
         return ResponseEntity.ok(ApiResponse.<StoreResource>builder().data(storeResource).build());
+    }
+
+    @GetMapping(params = "category")
+    public ResponseEntity<ApiResponse<List<StoreResource>>> findStoreByCategory(@RequestParam String category) {
+        return ResponseEntity.ok(
+                ApiResponse.<List<StoreResource>>builder()
+                        .data(getMapper()
+                                .toResources(storeService.findStoreByCategory(StoreCategory.valueOf(category))))
+                        .build());
     }
 }

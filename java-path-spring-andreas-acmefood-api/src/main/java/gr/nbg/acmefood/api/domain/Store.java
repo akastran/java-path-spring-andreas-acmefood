@@ -19,9 +19,9 @@ import java.util.Set;
 @SequenceGenerator(name = "idGenerator", sequenceName = "STORES_SEQ", initialValue = 1, allocationSize = 1)
 public class Store extends BaseModel{
 
-//    @NotNull
-//    @Column(length = 50, nullable = false, unique = true)
-//    private String name;
+    @NotNull
+    @Column(length = 50, nullable = false, unique = true)
+    private String name;
 
     @NotNull
     private StoreCategory category;

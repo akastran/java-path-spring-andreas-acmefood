@@ -11,4 +11,5 @@ import lombok.ToString;
 public class StoreResource extends BaseResource {
 
     private StoreCategory category;
+    private String name;
 }
