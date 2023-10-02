@@ -8,4 +8,6 @@ import org.mapstruct.Mapper;
 public interface AccountMapper extends BaseMapper<Account, AccountResource> {
 
     AccountResource toResource(Account domain);
+    Account toDomain(AccountResource resource);
+
 }

@@ -7,12 +7,10 @@ import gr.nbg.acmefood.api.service.BaseService;
 import gr.nbg.acmefood.api.service.AccountService;
 import gr.nbg.acmefood.api.transfer.ApiResponse;
 import gr.nbg.acmefood.api.transfer.resource.AccountResource;
+import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequiredArgsConstructor
@@ -32,9 +30,14 @@ public class AccountController extends BaseController<Account, AccountResource> 
         return accountMapper;
     }
 
-    @GetMapping(params = "serial")
-    public ResponseEntity<ApiResponse<AccountResource>> findById(@RequestParam Long id) {
-        final AccountResource accountResource = getMapper().toResource(accountService.get(id));
-        return ResponseEntity.ok(ApiResponse.<AccountResource>builder().data(accountResource).build());
+    @PostMapping("/create")
+    public ResponseEntity<ApiResponse<AccountResource>> create(@RequestBody final AccountResource resource) {
+
+        return ResponseEntity.ok(
+                ApiResponse.<AccountResource>builder()
+                        .data(getMapper().toResource(accountService.create(getMapper().toDomain(resource))))
+//                        .data(getMapper().toResource(
+//                                accountService.create(getMapper().toDomain(resource))))
+                        .build());
     }
 }
