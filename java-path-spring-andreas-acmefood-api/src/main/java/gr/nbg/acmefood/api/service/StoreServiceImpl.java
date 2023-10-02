@@ -29,13 +29,9 @@ public class StoreServiceImpl extends BaseServiceImpl<Store> implements StoreSer
         return getRepository().save(store);
     }
 
-    @Override
-    public Store findByName(String name) {
-        return storeRepository.findByName(name);
-    }
+//    @Override
+//    public Store findByName(String name) {
+//        return storeRepository.findByName(name);
+//    }
 
-    @Override
-    public Store findByStoreId(Long storeId) {
-        return storeRepository.findByStoreId(storeId);
-    }
 }

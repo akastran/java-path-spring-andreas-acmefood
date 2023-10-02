@@ -8,5 +8,5 @@ public interface ProductService extends BaseService<Product, Long> {
 
         Product findByDescription(String description);
 
-        Product findByProductId(Long productId);
+        Product get(Long productId);
 }

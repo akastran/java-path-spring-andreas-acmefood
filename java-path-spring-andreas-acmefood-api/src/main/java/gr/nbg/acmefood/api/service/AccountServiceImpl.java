@@ -30,13 +30,9 @@ public class AccountServiceImpl extends BaseServiceImpl<Account> implements Acco
         return getRepository().save(account);
     }
 
-    @Override
-    public Account findByUserId(String userId) {
-        return accountRepository.findByUserId(userId);
-    }
+//    @Override
+//    public Account findByUserId(String userId) {
+//        return accountRepository.findByUserId(userId);
+//    }
 
-    @Override
-    public Account findByAccountId(Long accountId) {
-        return accountRepository.findByAccountId(accountId);
-    }
 }

@@ -6,7 +6,7 @@ public interface AccountService extends BaseService<Account, Long>  {
 
     Account create(final Account account);
 
-    Account findByUserId(String userId);
+//    Account findByUserId(String userId);
 
-    Account findByAccountId(Long accountId);
+    Account get(Long accountId);
 }

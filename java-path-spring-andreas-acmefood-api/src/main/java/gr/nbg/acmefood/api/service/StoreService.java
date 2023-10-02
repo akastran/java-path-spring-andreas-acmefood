@@ -6,7 +6,7 @@ public interface StoreService extends BaseService<Store, Long>  {
 
     Store create(final Store store);
 
-    Store findByName(String name);
+//    Store findByName(String name);
 
-    Store findByStoreId(Long storeId);
+    Store get(Long storeId);
 }

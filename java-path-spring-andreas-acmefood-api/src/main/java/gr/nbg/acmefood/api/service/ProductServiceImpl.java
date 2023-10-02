@@ -31,11 +31,8 @@ public class ProductServiceImpl extends BaseServiceImpl<Product> implements Prod
 
     @Override
     public Product findByDescription(String description) {
+
         return productRepository.findByDescription(description);
     }
 
-    @Override
-    public Product findByProductId(Long productId) {
-        return productRepository.findByProductId(productId);
-    }
 }

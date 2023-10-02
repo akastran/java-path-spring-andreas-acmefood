@@ -13,6 +13,8 @@ import java.math.BigDecimal;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
+//@Table(name = "PRODUCTS", indexes = {@Index(columnList = "store_id")})
+@Table(name = "PRODUCTS")
 @SequenceGenerator(name = "idGenerator", sequenceName = "PRODUCTS_SEQ", initialValue = 1, allocationSize = 1)
 public class Product extends BaseModel{
 
@@ -27,9 +29,8 @@ public class Product extends BaseModel{
     @Column(precision = 10, scale = 2, nullable = false)
     private BigDecimal price;
 
-    @ToString.Exclude
-    @NotNull
-    @ManyToOne(fetch = FetchType.LAZY, optional = false)
-    @MapsId("storeId")
-    private Store store;
+//    @ToString.Exclude
+//    @ManyToOne(fetch = FetchType.LAZY, optional = false)
+//    @MapsId("store_id")
+//    private Store store;
 }

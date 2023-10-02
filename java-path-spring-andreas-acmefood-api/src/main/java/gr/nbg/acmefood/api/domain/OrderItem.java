@@ -20,11 +20,13 @@ public class OrderItem  extends BaseModel{
     @ToString.Exclude
     @NotNull
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    @MapsId("product_id")
     private Product product;
 
     @ToString.Exclude
     @NotNull
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    @MapsId("order_id")
     private Order order;
 
     @NotNull
