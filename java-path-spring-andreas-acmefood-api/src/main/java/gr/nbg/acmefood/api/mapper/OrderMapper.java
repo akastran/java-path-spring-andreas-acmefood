@@ -8,4 +8,6 @@ import org.mapstruct.Mapper;
 public interface OrderMapper extends BaseMapper<Order, OrderResource> {
 
     OrderResource toResource(Order domain);
+
+    Order toDomain(OrderResource resource);
 }

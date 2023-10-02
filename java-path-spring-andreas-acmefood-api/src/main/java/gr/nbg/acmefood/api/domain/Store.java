@@ -14,7 +14,6 @@ import java.util.Set;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-//@Table(name = "STORES", indexes = {@Index(columnList = "name")})
 @Table(name = "STORES")
 @SequenceGenerator(name = "idGenerator", sequenceName = "STORES_SEQ", initialValue = 1, allocationSize = 1)
 public class Store extends BaseModel{

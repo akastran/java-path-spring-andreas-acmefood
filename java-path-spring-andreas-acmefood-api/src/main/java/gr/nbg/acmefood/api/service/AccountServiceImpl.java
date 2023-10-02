@@ -1,7 +1,6 @@
 package gr.nbg.acmefood.api.service;
 
 import gr.nbg.acmefood.api.domain.Account;
-import gr.nbg.acmefood.api.domain.Store;
 import gr.nbg.acmefood.api.repository.AccountRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.jpa.repository.JpaRepository;

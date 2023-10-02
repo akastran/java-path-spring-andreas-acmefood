@@ -9,10 +9,6 @@ import java.util.List;
 @Repository
 public interface OrderRepository extends JpaRepository<Order, Long> {
 
-//    List<Order> getOrderByUserId(String userId);
-
     List<Order> getOrderByStoreId(Long storeId);
-
-//    List<Order> getOrderByStoreName(String storeName);
 
 }

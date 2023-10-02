@@ -1,20 +1,16 @@
 package gr.nbg.acmefood.api.controller;
 
 import gr.nbg.acmefood.api.domain.Order;
-import gr.nbg.acmefood.api.domain.StoreCategory;
 import gr.nbg.acmefood.api.mapper.BaseMapper;
 import gr.nbg.acmefood.api.mapper.OrderMapper;
 import gr.nbg.acmefood.api.service.BaseService;
 import gr.nbg.acmefood.api.service.OrderService;
 import gr.nbg.acmefood.api.transfer.ApiResponse;
 import gr.nbg.acmefood.api.transfer.resource.OrderResource;
-import gr.nbg.acmefood.api.transfer.resource.StoreResource;
+import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -40,6 +36,15 @@ public class OrderController extends BaseController<Order, OrderResource> {
     public ResponseEntity<ApiResponse<OrderResource>> findById(@RequestParam Long order) {
         final OrderResource orderResource = getMapper().toResource(orderService.get(order));
         return ResponseEntity.ok(ApiResponse.<OrderResource>builder().data(orderResource).build());
+    }
+
+    @PostMapping("/create")
+    public ResponseEntity<ApiResponse<OrderResource>> create(@Valid @RequestBody final OrderResource resource) {
+
+        return ResponseEntity.ok(
+                ApiResponse.<OrderResource>builder()
+                        .data(getMapper().toResource(orderService.create(getMapper().toDomain(resource))))
+                        .build());
     }
 
 }

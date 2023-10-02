@@ -3,7 +3,6 @@ package gr.nbg.acmefood.api.service;
 import gr.nbg.acmefood.api.domain.Order;
 import gr.nbg.acmefood.api.repository.OrderRepository;
 import gr.nbg.acmefood.api.domain.Store;
-import gr.nbg.acmefood.api.repository.StoreRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Service;

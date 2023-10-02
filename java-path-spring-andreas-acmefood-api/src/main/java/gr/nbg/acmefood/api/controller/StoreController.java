@@ -8,9 +8,7 @@ import gr.nbg.acmefood.api.service.BaseService;
 import gr.nbg.acmefood.api.service.StoreService;
 import gr.nbg.acmefood.api.transfer.ApiResponse;
 import gr.nbg.acmefood.api.transfer.resource.StoreResource;
-import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
