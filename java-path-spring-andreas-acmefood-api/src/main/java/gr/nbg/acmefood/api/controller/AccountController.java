@@ -31,13 +31,11 @@ public class AccountController extends BaseController<Account, AccountResource> 
     }
 
     @PostMapping("/create")
-    public ResponseEntity<ApiResponse<AccountResource>> create(@RequestBody final AccountResource resource) {
+    public ResponseEntity<ApiResponse<AccountResource>> create(@Valid @RequestBody final AccountResource resource) {
 
         return ResponseEntity.ok(
                 ApiResponse.<AccountResource>builder()
                         .data(getMapper().toResource(accountService.create(getMapper().toDomain(resource))))
-//                        .data(getMapper().toResource(
-//                                accountService.create(getMapper().toDomain(resource))))
                         .build());
     }
 }

@@ -29,8 +29,4 @@ public class Product extends BaseModel{
     @Column(precision = 10, scale = 2, nullable = false)
     private BigDecimal price;
 
-//    @ToString.Exclude
-//    @ManyToOne(fetch = FetchType.LAZY, optional = false)
-//    @MapsId("store_id")
-//    private Store store;
 }

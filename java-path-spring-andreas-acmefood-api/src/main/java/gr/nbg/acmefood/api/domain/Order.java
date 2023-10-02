@@ -17,7 +17,6 @@ import java.util.Set;
 @AllArgsConstructor
 @Entity
 @Table(name = "ORDERS", indexes = {@Index(columnList = "store_id"),
-//        @Index(columnList = "STORES.name"),
         @Index(columnList = "account_id")})
 @SequenceGenerator(name = "idGenerator", sequenceName = "ORDERS_SEQ", initialValue = 1, allocationSize = 1)
 public class Order extends BaseModel{

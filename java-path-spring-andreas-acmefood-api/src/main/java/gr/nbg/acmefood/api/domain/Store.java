@@ -26,8 +26,4 @@ public class Store extends BaseModel{
     @NotNull
     private StoreCategory category;
 
-//    @ToString.Exclude
-//    @EqualsAndHashCode.Exclude
-//    @OneToMany(mappedBy = "store", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.LAZY)
-//    private Set<Product> products = new HashSet<>();
 }

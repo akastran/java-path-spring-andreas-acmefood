@@ -9,11 +9,7 @@ public interface OrderService extends BaseService<Order, Long>  {
 
     Order create(final Order order);
 
-//    List<Order> getOrderByUserId(String userId);
-
     List<Order> getOrderByStoreId(Long storeId);
-
-//    List<Order> getOrderByStoreName(String storeName);
 
     Order get(Long orderId);
 }
