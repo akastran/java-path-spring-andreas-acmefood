@@ -1,0 +1,27 @@
+GET http://localhost:8080/stores
+Accept: application/json
+
+###
+
+GET http://localhost:8080/stores/2
+Accept: application/json
+
+###
+
+GET http://localhost:8080/stores?category=Grill
+Accept: application/json
+
+###
+
+GET http://localhost:8080/stores?id=3
+Accept: application/json
+
+###
+
+GET http://localhost:8080/accounts
+Accept: application/json
+
+###
+
+GET http://localhost:8080/accounts/3
+Accept: application/json

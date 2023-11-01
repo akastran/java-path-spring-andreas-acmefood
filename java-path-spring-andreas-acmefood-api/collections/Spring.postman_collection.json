@@ -1,0 +1,39 @@
+{
+	"info": {
+		"_postman_id": "73a92038-4065-419a-92c5-a617d660a7d1",
+		"name": "Spring",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "15198345"
+	},
+	"item": [
+		{
+			"name": "Create Account",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"firstname\": \"John\",\r\n  \"lastname\": \"Wick\",\r\n  \"email\": \"dork@nbg.gr\",\r\n  \"phone\": \"2104848484\",\r\n  \"streetAddress\": \"Nowhere, Kansas\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/accounts/create",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"accounts",
+						"create"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
